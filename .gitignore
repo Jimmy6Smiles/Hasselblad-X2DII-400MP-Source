@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+build/
+dist/
+.local-only/
+*.3FR
+*.3fr
+*.cim
+*.x2d2diag.zip
+*.x2d2ext
+*.so
+*.exe
+*.dll
+*.bin
+*.pem
+*.key
+*.log
