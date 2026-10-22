@@ -1,5 +1,5 @@
 /* 自写私有适配：从六份完整原片构建任务，不拍摄、不发布、不删除照片。
- * 只接受已研究的 X2D II 1.3.16.2 未压缩布局；不宣称通用 3FR 解码器。 */
+ * 只接受显式列出的 X2D II 固件与下述未压缩布局；不宣称通用 3FR 解码器。 */
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 #endif
@@ -33,6 +33,9 @@ static int integer(FmIfd *d,unsigned id,uint32_t *out,unsigned count){
 }
 static int number(FmIfd *d,unsigned id,uint32_t expected){uint32_t v;return integer(d,id,&v,1)&&v==expected;}
 static int text_is(FmIfd *d,unsigned id,const char *s){FmTag *t=fm_find(d,id);return t&&t->type==2&&t->size==strlen(s)+1&&!memcmp(t->data,s,t->size);}
+static int supported_raw_firmware(FmIfd *d){
+    return text_is(d,305,"1.3.16.2")||text_is(d,305,"1.3.18.1");
+}
 static int rational(FmIfd *d,unsigned id,uint32_t *n,uint32_t *den){
     FmTag *t=fm_find(d,id);if(!t||t->type!=5||t->count!=1)return 0;
     *n=fm32(t->data);*den=fm32(t->data+4);if(!*n||!*den)return 0;
@@ -48,7 +51,7 @@ static int parse(FILE *f,Input *v,FmIfd *root){
     v->size=(uint64_t)st.st_size;
     if(!fm_read(f,v->size,0,h,8)||memcmp(h,"II*\0",4)||
        !fm_parse(f,v->size,fm32(h+4),root,roots,sizeof roots/sizeof *roots)||
-       !text_is(root,50708,"Hasselblad X2D II 100C")||!text_is(root,305,"1.3.16.2")||
+       !text_is(root,50708,"Hasselblad X2D II 100C")||!supported_raw_firmware(root)||
        !integer(root,274,&v->exposure.orientation,1)||v->exposure.orientation<1||v->exposure.orientation>8||
        !integer(root,330,&ptr,1)||ptr==fm32(h+4)||!fm_parse(f,v->size,ptr,&raw,raws,sizeof raws/sizeof *raws))goto done;
     if(!number(&raw,256,11904)||!number(&raw,257,8842)||!number(&raw,258,16)||

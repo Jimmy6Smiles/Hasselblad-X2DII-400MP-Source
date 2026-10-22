@@ -3,7 +3,10 @@
 English | [简体中文](README_CN.md)
 
 Maintained by **Jimmy6Smiles**. Source publication for the unofficial six-frame
-400 MP pixel-shift extension for **Hasselblad X2D II 100C, firmware 1.3.16.2**.
+400 MP pixel-shift extension for **Hasselblad X2D II 100C**.
+The original target is firmware **1.3.16.2**; the **1.3.18.1 / 1.2.5-rc3**
+adaptation is included, with successful capture reported by the maintainer on
+2026-10-22. See [adaptation scope](docs/FIRMWARE_1_3_18_1.md).
 This is not an official Hasselblad product and is not intended for X2D or X1D.
 
 ## What the extension does

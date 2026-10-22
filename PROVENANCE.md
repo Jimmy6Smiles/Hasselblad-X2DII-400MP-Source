@@ -31,7 +31,16 @@ that this later source snapshot exactly reproduces either release.
 - The 1.2.2 hash baseline remains historical; it is not substituted with new
   hashes to imply rc4 reproducibility.
 
-## Deliberate exclusions
+## 2026-10-22 firmware adaptation update
+
+The two `auto_prepare.c` copies were synchronized against the frozen
+1.2.5-rc3 build-source snapshot for firmware 1.3.18.1. Other exported `src/`
+and `shared/` files matched that snapshot. The maintainer reported successful
+capture; this does not establish full format/recovery acceptance. Package
+identity and build limitations are recorded in [the adaptation note](docs/FIRMWARE_1_3_18_1.md).
+The initial export revision above remains historical, not the revision of this update.
+
+## Deliberate exclusions (unchanged)
 
 No installer source/binaries, startup replacement scripts, common runtime hosts,
 factory profiles/libraries, full firmware, photographs, device logs, credentials,
