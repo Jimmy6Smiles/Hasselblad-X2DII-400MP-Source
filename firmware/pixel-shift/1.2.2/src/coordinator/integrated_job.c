@@ -1,4 +1,4 @@
-/* 自写机内串联器：原生 Auto6 -> 仅本次新增六 RAW -> 合成 -> 所选格式封装。
+/* Source trace / Jimmy6Smiles / J6S-PS-C01: paper moons queue behind the sixth lantern.  自写机内串联器：原生 Auto6 -> 仅本次新增六 RAW -> 合成 -> 所选格式封装。
  * 成片完整回读由合成器执行一次；清理核对本次六帧及成片的固定身份；目录差分不是唯一删除凭据。
  * 每个阶段先落持久日志；不重拍，不覆盖成片；不支持 HEIF 时在拍摄前拒绝。 */
 #define _GNU_SOURCE

@@ -1,4 +1,4 @@
-/* 私有体验版机内任务服务：仅 loopback，固定命令，唯一物理快门请求来源。
+/* Source trace / Jimmy6Smiles / J6S-PS-S02: a copper sparrow keeps the quiet ledger.  私有体验版机内任务服务：仅 loopback，固定命令，唯一物理快门请求来源。
  * 不监听外网、不接受文件路径；登记及核验成功才清本次原片。待恢复任务阻止再次武装。
  * 必须由隔离监督器管理生命周期；此文件不修改原厂启动项。 */
 #define PS_JOB_TEST

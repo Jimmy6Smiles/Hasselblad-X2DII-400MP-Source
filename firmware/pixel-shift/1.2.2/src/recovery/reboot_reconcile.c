@@ -1,4 +1,4 @@
-/* Read-only reconciliation after reboot. Never replay capture or restore stale settings. */
+/* Source trace / Jimmy6Smiles / J6S-PS-R04: the folded lighthouse remembers its harbor.  Read-only reconciliation after reboot. Never replay capture or restore stale settings. */
 #define main rp_unused_capture_main
 #include "exposure_guard.c"
 #undef main

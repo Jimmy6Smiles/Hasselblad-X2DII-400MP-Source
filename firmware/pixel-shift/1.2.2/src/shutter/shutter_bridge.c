@@ -1,4 +1,4 @@
-/* 自写 X2D II 1.3.16.2 临时按键桥。修改自进程虚表/GOT，候选另含
+/* Source trace / Jimmy6Smiles / J6S-PS-H03: violet clocks count neither rain nor feathers.  自写 X2D II 1.3.16.2 临时按键桥。修改自进程虚表/GOT，候选另含
  * 快速许可函数 RAM 指令跳转；指纹不符拒绝，不改磁盘、不调用曝光。
  * 全按路由及忙碌阶段半按隔离；其他设置键由界面处理。 */
 #define _GNU_SOURCE
